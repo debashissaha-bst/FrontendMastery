@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Skybox — a mini CSS project</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,500;9..144,600&family=Work+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --coral: #FF9A76;
+    --gold: #FFCE7C;
+    --dusk: #6B4984;
+    --night: #201C3A;
+    --cream: #FFF8ED;
+    --card-radius: 22px;
+    --ease: cubic-bezier(.4,0,.2,1);
+  }
+
+  *{ margin:0; padding:0; box-sizing:border-box; }
+
+  body{
+    min-height:100vh;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    background: #14111f;
+    font-family:'Work Sans', sans-serif;
+    padding: 32px 16px;
+  }
+
+  .stage{
+    width: 340px;
+  }
+
+  .card{
+    position:relative;
+    border-radius: var(--card-radius);
+    overflow:hidden;
+    height: 460px;
+    background: linear-gradient(180deg, var(--dusk) 0%, var(--coral) 55%, var(--gold) 100%);
+    transition: background 900ms var(--ease);
+    box-shadow: 0 30px 60px -20px rgba(0,0,0,.55);
+  }
+
+  .card.night{
+    background: linear-gradient(180deg, var(--night) 0%, #2E2755 60%, #3A2E5C 100%);
+  }
+
+  /* sun / moon */
+  .orb{
+    position:absolute;
+    left:50%;
+    top: 92px;
+    width: 92px;
+    height: 92px;
+    border-radius:50%;
+    background: radial-gradient(circle at 35% 30%, #FFF3D6, var(--gold) 60%);
+    box-shadow: 0 0 60px 18px rgba(255, 206, 124, .55);
+    transform: translateX(-50%);
+    transition: background 900ms var(--ease), box-shadow 900ms var(--ease);
+    animation: bob 6s ease-in-out infinite;
+  }
+
+  .card.night .orb{
+    background: radial-gradient(circle at 35% 30%, #ffffff, #d9d6f2 65%);
+    box-shadow: 0 0 34px 10px rgba(217, 214, 242, .35);
+  }
+
+  @keyframes bob{
+    0%, 100%{ transform: translateX(-50%) translateY(0); }
+    50%{ transform: translateX(-50%) translateY(-8px); }
+  }
+
+  /* drifting clouds */
+  .cloud{
+    position:absolute;
+    background: rgba(255,255,255,.75);
+    border-radius: 999px;
+    filter: blur(.2px);
+    opacity: .9;
+  }
+  .cloud::before, .cloud::after{
+    content:"";
+    position:absolute;
+    background: inherit;
+    border-radius: 999px;
+  }
+  .c1{ width:86px; height:26px; top:70px; left:-100px; animation: drift 18s linear infinite; }
+  .c1::before{ width:46px; height:46px; top:-22px; left:6px; }
+  .c1::after{ width:34px; height:34px; top:-14px; left:44px; }
+
+  .c2{ width:64px; height:20px; top:150px; left:-80px; opacity:.65; animation: drift 24s linear infinite; animation-delay: -8s; }
+  .c2::before{ width:34px; height:34px; top:-16px; left:4px; }
+  .c2::after{ width:26px; height:26px; top:-10px; left:32px; }
+
+  .card.night .cloud{ background: rgba(255,255,255,.14); }
+
+  @keyframes drift{
+    from{ transform: translateX(0); }
+    to{ transform: translateX(460px); }
+  }
+
+  /* stars, night only */
+  .stars{
+    position:absolute; inset:0;
+    opacity:0;
+    transition: opacity 900ms var(--ease);
+  }
+  .card.night .stars{ opacity:1; }
+  .star{
+    position:absolute;
+    width:3px; height:3px;
+    background:#fff;
+    border-radius:50%;
+    animation: twinkle 2.6s ease-in-out infinite;
+  }
+
+  @keyframes twinkle{
+    0%, 100%{ opacity:.25; }
+    50%{ opacity:1; }
+  }
+
+  /* content */
+  .content{
+    position:relative;
+    z-index:2;
+    height:100%;
+    display:flex;
+    flex-direction:column;
+    justify-content:flex-end;
+    padding: 24px 28px 28px;
+    color: var(--cream);
+  }
+
+  .place{
+    font-family:'Work Sans', sans-serif;
+    font-size: 15px;
+    font-weight: 500;
+    letter-spacing: .01em;
+    opacity: .9;
+  }
+
+  .temp{
+    font-family:'Fraunces', serif;
+    font-optical-sizing: auto;
+    font-weight: 500;
+    font-size: 88px;
+    line-height: .95;
+    margin: 2px 0 6px;
+  }
+  .temp span{ font-size: 40px; font-weight: 300; vertical-align: 20px; opacity:.85; }
+
+  .desc{
+    font-size: 16px;
+    font-weight: 400;
+    opacity: .92;
+    margin-bottom: 18px;
+  }
+
+  .strip{
+    display:flex;
+    justify-content:space-between;
+    padding-top: 16px;
+    border-top: 1px solid rgba(255,255,255,.28);
+  }
+
+  .hour{
+    text-align:center;
+    font-size: 12px;
+  }
+  .hour .h-time{ opacity:.75; display:block; margin-bottom:6px; }
+  .hour .h-temp{ font-weight: 600; }
+
+  .toggle{
+    position:absolute;
+    top: 18px;
+    right: 18px;
+    z-index: 3;
+    width: 46px;
+    height: 26px;
+    border-radius: 999px;
+    border: 1px solid rgba(255,255,255,.4);
+    background: rgba(0,0,0,.18);
+    cursor: pointer;
+    padding: 3px;
+    display:flex;
+    align-items:center;
+  }
+  .toggle .knob{
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    background: var(--cream);
+    transition: transform 400ms var(--ease);
+  }
+  .card.night .toggle .knob{ transform: translateX(18px); }
+
+  .toggle:focus-visible, .card:has(.toggle:focus-visible){
+    outline: none;
+  }
+  .toggle:focus-visible{
+    box-shadow: 0 0 0 3px rgba(255,255,255,.7);
+  }
+
+  .caption{
+    margin-top: 18px;
+    text-align:center;
+    color: rgba(255,255,255,.4);
+    font-size: 13px;
+  }
+
+  @media (prefers-reduced-motion: reduce){
+    .orb, .cloud, .star{ animation: none !important; }
+  }
+</style>
+</head>
+<body>
+
+<div class="stage">
+  <div class="card" id="card">
+    <button class="toggle" id="toggle" aria-label="Switch to night">
+      <span class="knob"></span>
+    </button>
+
+    <div class="stars" id="stars"></div>
+
+    <div class="orb"></div>
+    <div class="cloud c1"></div>
+    <div class="cloud c2"></div>
+
+    <div class="content">
+      <div class="place">Dhaka, Bangladesh</div>
+      <div class="temp">31<span>°</span></div>
+      <div class="desc">Partly cloudy, light breeze</div>
+
+      <div class="strip">
+        <div class="hour"><span class="h-time">Now</span><span class="h-temp">31°</span></div>
+        <div class="hour"><span class="h-time">3PM</span><span class="h-temp">32°</span></div>
+        <div class="hour"><span class="h-time">6PM</span><span class="h-temp">29°</span></div>
+        <div class="hour"><span class="h-time">9PM</span><span class="h-temp">27°</span></div>
+        <div class="hour"><span class="h-time">12AM</span><span class="h-temp">26°</span></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="caption">flip the switch for night mode</div>
+</div>
+
+<script>
+  const card = document.getElementById('card');
+  const toggle = document.getElementById('toggle');
+  const stars = document.getElementById('stars');
+
+  // scatter stars once
+  for(let i=0;i<28;i++){
+    const s = document.createElement('div');
+    s.className = 'star';
+    s.style.left = Math.random()*100 + '%';
+    s.style.top = Math.random()*70 + '%';
+    s.style.animationDelay = (Math.random()*2.6) + 's';
+    stars.appendChild(s);
+  }
+
+  toggle.addEventListener('click', () => {
+    const isNight = card.classList.toggle('night');
+    toggle.setAttribute('aria-label', isNight ? 'Switch to day' : 'Switch to night');
+  });
+</script>
+
+</body>
+</html>
