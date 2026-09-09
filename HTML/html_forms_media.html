@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="A pure HTML demo covering forms, input types, media, and interactive elements.">
+    <title>HTML Forms, Media</title>
+</head>
+<body>
+
+    <header>
+        <h1>HTML Forms, Media</h1>
+        <p>Covers forms, inputs, media, and interactive tags.</p>
+        <nav>
+            <ul>
+                <li><a href="#forms">Forms</a></li>
+                <li><a href="#media">Media</a></li>
+                <li><a href="#interactive">Interactive Elements</a></li>
+                <li><a href="#embedded">Embedded Content</a></li>
+                <li><a href="#misc">Misc / Data Attributes</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+
+        <section id="forms">
+            <h2>1. Forms and Input Types</h2>
+            <form action="#" method="post">
+
+                <fieldset>
+                    <legend>Personal Information</legend>
+
+                    <label for="fullname">Name:</label><br>
+                    <input type="text" id="fullname" name="fullname" placeholder="Steve Smith" required><br><br>
+
+                    <label for="email">Email:</label><br>
+                    <input type="email" id="email" name="email" placeholder="steve@example.com" required><br><br>
+
+                    <label for="password">Password:</label><br>
+                    <input type="password" id="password" name="password" minlength="8"><br><br>
+
+                    <label for="age">Age:</label><br>
+                    <input type="number" id="age" name="age" min="1" max="120" value="22"><br><br>
+
+                    <label for="phone">Phone:</label><br>
+                    <input type="tel" id="phone" name="phone" placeholder="123-456-789"><br><br>
+
+                    <label for="website">Website:</label><br>
+                    <input type="url" id="website" name="website" placeholder="https://example.com"><br><br>
+
+                    <label for="birthday">Birthday:</label><br>
+                    <input type="date" id="birthday" name="birthday"><br><br>
+
+                    <label for="meeting-time">Meeting Time:</label><br>
+                    <input type="time" id="meeting-time" name="meeting-time"><br><br>
+
+                    <label for="appointment">Appointment (Date &amp; Time):</label><br>
+                    <input type="datetime-local" id="appointment" name="appointment"><br><br>
+
+                    <label for="favcolor">Favorite Color:</label>
+                    <input type="color" id="favcolor" name="favcolor" value="#ff0000"><br><br>
+
+                    <label for="volume">Volume:</label>
+                    <input type="range" id="volume" name="volume" min="0" max="100" value="50"><br><br>
+
+                    <label for="search">Search:</label>
+                    <input type="search" id="search" name="search" placeholder="Search here..."><br><br>
+
+                    <label for="hidden-id">Hidden field example:</label>
+                    <input type="hidden" id="hidden-id" name="hidden-id" value="12345">
+                </fieldset>
+
+                <br>
+
+                <fieldset>
+                    <legend>Preferences</legend>
+
+                    <p>Select your hobbies:</p>
+                    <input type="checkbox" id="reading" name="hobbies" value="reading">
+                    <label for="reading">Reading</label><br>
+                    <input type="checkbox" id="gaming" name="hobbies" value="gaming">
+                    <label for="gaming">Gaming</label><br>
+                    <input type="checkbox" id="sports" name="hobbies" value="sports">
+                    <label for="sports">Sports</label><br><br>
+
+                    <label for="country">Country:</label>
+                    <select id="country" name="country">
+                        <optgroup label="North America">
+                            <option value="us">United States</option>
+                            <option value="ca">Canada</option>
+                        </optgroup>
+                        <optgroup label="Asia">
+                            <option value="bd" selected>Bangladesh</option>
+                            <option value="cn">China</option>
+                        </optgroup>
+                    </select><br><br>
+
+                    <label for="browser">Favorite Browser (with suggestions):</label>
+                    <input list="browsers" id="browser" name="browser">
+                    <datalist id="browsers">
+                        <option value="Chrome">
+                        <option value="Firefox">
+                        <option value="Safari">
+                        <option value="Edge">
+                    </datalist><br><br>
+
+                    <label for="bio">Short Bio:</label><br>
+                    <textarea id="bio" name="bio" rows="4" cols="40" placeholder="Tell us about yourself..."></textarea>
+                </fieldset>
+
+                <br>
+
+                <fieldset>
+                    <legend>File &amp; Progress</legend>
+
+                    <label for="upload">Upload a file:</label>
+                    <input type="file" id="upload" name="upload" accept=".jpg,.png,.pdf"><br><br>
+
+                    <label for="storage">Disk usage:</label>
+                    <progress id="storage" value="70" max="100"></progress><br><br>
+
+                    <label for="score">Test score:</label>
+                    <meter id="score" value="8" min="0" max="10" low="4" high="8" optimum="10"></meter>
+                </fieldset>
+
+                <br>
+
+                <button type="submit">Submit</button>
+                <button type="reset">Reset</button>
+                <input type="submit" value="Submit (input version)">
+                <input type="button" value="Click Me">
+            </form>
+        </section>
+
+        <hr>
+
+        <section id="media">
+            <h2>2. Media Elements</h2>
+
+            <h3>Audio</h3>
+            <audio controls>
+                <source src="audio-file.mp3" type="audio/mpeg">
+                <source src="audio-file.ogg" type="audio/ogg">
+                Your browser does not support the audio element.
+            </audio>
+
+            <h3>Video</h3>
+            <video width="320" height="240" controls poster="https://via.placeholder.com/320x240">
+                <source src="video-file.mp4" type="video/mp4">
+                Your browser does not support the video element.
+            </video>
+        </section>
+
+        <hr>
+
+        <section id="interactive">
+            <h2>3. Interactive Elements</h2>
+
+            <details>
+                <summary>Click to see more details</summary>
+                <p>This content is hidden by default and revealed when the summary is clicked, using the native <code>&lt;details&gt;</code> and <code>&lt;summary&gt;</code> tags — no JavaScript needed.</p>
+            </details>
+
+            <br>
+
+
+            <br>
+
+            <template id="row-template">
+                <tr>
+                    <td>Template Cell</td>
+                </tr>
+            </template>
+            <p>(A <code>&lt;template&gt;</code> above holds markup that is not rendered until used by a script.)</p>
+
+            <p>
+                <output id="calc-output" name="calc-output">Result appears here</output>
+                — an <code>&lt;output&gt;</code> element, typically used to display the result of a calculation.
+            </p>
+        </section>
+
+        <hr>
+
+        <section id="embedded">
+            <h2>4. Embedded Content &amp; Graphics</h2>
+
+            <h3>Inline SVG</h3>
+            <svg width="120" height="120">
+                <circle cx="60" cy="60" r="50" stroke="black" stroke-width="3" fill="lightgrey" />
+            </svg>
+
+            <h3>Canvas</h3>
+            <canvas id="myCanvas" width="200" height="100">
+                Your browser does not support the canvas element.
+            </canvas>
+        </section>
+
+        <hr>
+
+        <section id="misc">
+            <h2>5. Miscellaneous &amp; Data Attributes</h2>
+
+            <p data-user-id="4521" data-role="admin">
+                This paragraph carries custom <code>data-*</code> attributes: <code>data-user-id</code> and <code>data-role</code>, useful for storing extra information for scripts.
+            </p>
+
+            <p>The event starts at September 5, 2006, 10:00 AM</time>.</p>
+
+            <p>
+                <span>Inline span</span> vs
+                <b>bold</b>, <i>italic</i>, and
+                <a href="#interactive">a jump link back up</a> — all inline-level elements.
+            </p>
+
+        </section>
+
+    </main>
+
+    <footer>
+        <p>&copy;HTML Practice</p>
+    </footer>
+
+</body>
+</html>
