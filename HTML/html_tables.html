@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="A pure HTML demo covering all major table-related tags and attributes.">
+    <title>HTML Tables Reference</title>
+</head>
+<body>
+
+    <header>
+        <h1>HTML Tables</h1>
+        <p>Covering table tags and attributes.</p>
+        <nav>
+            <ul>
+                <li><a href="#basic">Basic Table</a></li>
+                <li><a href="#caption">Caption</a></li>
+                <li><a href="#head-body-foot">Head / Body / Foot</a></li>
+                <li><a href="#span">Rowspan &amp; Colspan</a></li>
+                <li><a href="#colgroup">Colgroup &amp; Col</a></li>
+                <li><a href="#alignment">Cell Alignment</a></li>
+                <li><a href="#nested">Nested Table</a></li>
+                <li><a href="#full">Full Combined Example</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+
+        <section id="basic">
+            <h2>1. Basic Table (tr, th, td)</h2>
+            <table border="1">
+                <tr>
+                    <th>Name</th>
+                    <th>Age</th>
+                    <th>City</th>
+                </tr>
+                <tr>
+                    <td>Alice</td>
+                    <td>28</td>
+                    <td>Dhaka</td>
+                </tr>
+                <tr>
+                    <td>Smith</td>
+                    <td>30</td>
+                    <td>Chittagong</td>
+                </tr>
+            </table>
+        </section>
+
+        <hr>
+
+        <section id="caption">
+            <h2>2. Table Caption</h2>
+            <table border="1">
+                <caption>Weekly Weather Report</caption>
+                <tr>
+                    <th>Day</th>
+                    <th>Temperature</th>
+                    <th>Condition</th>
+                </tr>
+                <tr>
+                    <td>Monday</td>
+                    <td>30&deg;C</td>
+                    <td>Sunny</td>
+                </tr>
+                <tr>
+                    <td>Tuesday</td>
+                    <td>27&deg;C</td>
+                    <td>Cloudy</td>
+                </tr>
+            </table>
+        </section>
+
+        <hr>
+
+        <section id="head-body-foot">
+            <h2>3. thead, tbody, tfoot</h2>
+            <table border="1">
+                <caption>Quarterly Sales</caption>
+                <thead>
+                    <tr>
+                        <th>Product</th>
+                        <th>Q1</th>
+                        <th>Q2</th>
+                        <th>Q3</th>
+                        <th>Q4</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Widget A</td>
+                        <td>120</td>
+                        <td>150</td>
+                        <td>170</td>
+                        <td>200</td>
+                    </tr>
+                    <tr>
+                        <td>Widget B</td>
+                        <td>90</td>
+                        <td>95</td>
+                        <td>100</td>
+                        <td>110</td>
+                    </tr>
+                </tbody>
+                <tfoot>
+                    <tr>
+                        <td>Total</td>
+                        <td>210</td>
+                        <td>245</td>
+                        <td>270</td>
+                        <td>310</td>
+                    </tr>
+                </tfoot>
+            </table>
+        </section>
+
+        <hr>
+
+        <section id="span">
+            <h2>4. Rowspan &amp; Colspan</h2>
+            <table border="1">
+                <caption>Class Schedule</caption>
+                <tr>
+                    <th>Time</th>
+                    <th>Monday</th>
+                    <th>Tuesday</th>
+                </tr>
+                <tr>
+                    <td>9:00 - 10:00</td>
+                    <td colspan="2">Assembly</td>
+                </tr>
+                <tr>
+                    <td>10:00 - 11:00</td>
+                    <td rowspan="2">Mathematics</td>
+                    <td>Science</td>
+                </tr>
+                <tr>
+                    <td>11:00 - 12:00</td>
+                    <td>English</td>
+                </tr>
+            </table>
+        </section>
+
+        <hr>
+
+        <section id="alignment">
+            <h2>6. Cell Alignment Attributes</h2>
+            <table border="1">
+                <caption>Using align/valign attributes</caption>
+                <tr>
+                    <th>Left Aligned</th>
+                    <th>Center Aligned</th>
+                    <th>Right Aligned</th>
+                </tr>
+                <tr>
+                    <td align="left">Left</td>
+                    <td align="center">Center</td>
+                    <td align="right">Right</td>
+                </tr>
+                <tr>
+                    <td valign="top">Top</td>
+                    <td valign="middle">Middle</td>
+                    <td valign="bottom">Bottom</td>
+                </tr>
+            </table>
+        </section>
+
+        <hr>
+
+        <section id="nested">
+            <h2>7. Nested Table</h2>
+            <table border="1">
+                <caption>Outer Table with an Inner Table</caption>
+                <tr>
+                    <th>Section</th>
+                    <th>Details</th>
+                </tr>
+                <tr>
+                    <td>Team Roster</td>
+                    <td>
+                        <table border="1">
+                            <tr>
+                                <th>Player</th>
+                                <th>Position</th>
+                            </tr>
+                            <tr>
+                                <td>Karim</td>
+                                <td>Forward</td>
+                            </tr>
+                            <tr>
+                                <td>Rahim</td>
+                                <td>Defender</td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+            </table>
+        </section>
+
+        <hr>
+
+        <section id="full">
+            <h2>8. Full Combined Example</h2>
+            <table border="1">
+                <caption>Annual Student Report Card</caption>
+                <colgroup>
+                    <col>
+                    <col span="3">
+                </colgroup>
+                <thead>
+                    <tr>
+                        <th>Subject</th>
+                        <th>Term 1</th>
+                        <th>Term 2</th>
+                        <th>Final</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Mathematics</td>
+                        <td align="center">85</td>
+                        <td align="center">90</td>
+                        <td align="center">88</td>
+                    </tr>
+                    <tr>
+                        <td>Science</td>
+                        <td align="center">78</td>
+                        <td align="center">82</td>
+                        <td align="center">80</td>
+                    </tr>
+                    <tr>
+                        <td rowspan="2">Languages</td>
+                        <td align="center">70</td>
+                        <td align="center">75</td>
+                        <td align="center">73</td>
+                    </tr>
+                    <tr>
+                        <td align="center">88</td>
+                        <td align="center">91</td>
+                        <td align="center">90</td>
+                    </tr>
+                </tbody>
+                <tfoot>
+                    <tr>
+                        <td colspan="3">Overall Average</td>
+                        <td align="center">82.75</td>
+                    </tr>
+                </tfoot>
+            </table>
+        </section>
+
+    </main>
+
+    <footer>
+        <p>&copy; HTML Tables Practice.</p>
+    </footer>
+
+</body>
+</html>
