@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="A pure HTML demo covering document structure, text formatting, lists, tables, links, images and semantic elements.">
+    <meta name="author" content="HTML Practice">
+    <title>HTML Basics: Part 1</title>
+</head>
+<body>
+
+    <!-- Comments -->
+
+    <header>
+        <h1>HTML Basics</h1>
+        <p>core HTML tags practice</p>
+        <nav>
+            <ul>
+                <li><a href="#headings">Headings</a></li>
+                <li><a href="#text-formatting">Text Formatting</a></li>
+                <li><a href="#lists">Lists</a></li>
+                <li><a href="#links-images">Links &amp; Images</a></li>
+                <li><a href="#semantic">Semantic Layout</a></li>
+                <li><a href="#quotes-code">Quotes &amp; Code</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+
+        <section id="headings Size">
+            <h2>1. Headings (h1–h6)</h2>
+            <h1>Level 1</h1>
+            <h2>Level 2</h2>
+            <h3>Level 3</h3>
+            <h4>Level 4</h4>
+            <h5>Level 5</h5>
+            <h6>Level 6</h6>
+        </section>
+
+        <hr>
+
+        <section id="text-formatting">
+            <h2>2. Text Formatting Tags</h2>
+            <p>This is a normal paragraph. Here is <b>bold text</b> and here is <strong>strong text</strong>.</p>
+            <p>Here is <i>italic text</i> and here is <em>emphasized text</em>.</p>
+            <p>Here is <mark>highlighted text</mark>, <small>small text</small>, and <u>underlined text</u>.</p>
+            <p>Here is <del>deleted text</del> and <ins>inserted text</ins>.</p>
+            <p>Water formula: H<sub>2</sub>O. Squared value: x<sup>2</sup>.</p>
+            <p>Line break example: First line<br>Second line after a break.</p>
+            <p>The <code>&lt;p&gt;</code> tag defines a paragraph.</p>
+            <address>
+                Contact: smith@mail.com<br>
+                Dhaka, Bangladesh
+            </address>
+        </section>
+
+        <hr>
+
+
+
+        <section id="lists">
+            <h2>3. Lists</h2>
+
+            <h3>Unordered List</h3>
+            <ul>
+                <li>HTML</li>
+                <li>CSS</li>
+                <li>JavaScript</li>
+            </ul>
+
+            <h3>Ordered List</h3>
+            <ol>
+                <li>Plan the page</li>
+                <li>Write the code</li>
+                <li>Test in browser</li>
+            </ol>
+
+            <h3>Nested List</h3>
+            <ul>
+                <li>Frontend
+                    <ul>
+                        <li>HTML</li>
+                        <li>CSS</li>
+                    </ul>
+                </li>
+                <li>Backend
+                    <ol>
+                        <li>Server</li>
+                        <li>Database</li>
+                    </ol>
+                </li>
+            </ul>
+
+            <h3>Description List</h3>
+            <dl>
+                <dt>HTML</dt>
+                <dd>Use to structure web pages.</dd>
+                <dt>CSS</dt>
+                <dd>Use to style web pages.</dd>
+            </dl>
+        </section>
+
+        <hr>
+
+        <section id="links-images">
+            <h2>4. Links &amp; Images</h2>
+
+            <p>A basic link: <a href="https://www.example.com">Visit Example.com</a></p>
+            <p>Opens in a new tab: <a href="https://www.example.com" target="_blank" rel="noopener noreferrer">Open in new tab</a></p>
+            <p>A link to an email address: <a href="mailto:someone@example.com">Email us</a></p>
+            <p>A link to a section on this same page: <a href="#headings">Jump to Headings</a></p>
+
+            <h3>Images</h3>
+            <img src="football_image.jpg" alt="Football image" width="250" height="150">
+
+            <h3>Image as a Link</h3>
+            <a href="https://www.wikipedia.org">
+                <img src="football_image.jpg" alt="Football image" width="250" height="150">
+            </a>
+
+        </section>
+
+        <hr>
+
+        <section id="semantic">
+            <h2>6. Semantic Layout Elements</h2>
+            <article>
+                <h3>Article Example</h3>
+                <p>An <code>&lt;article&gt;</code> represents a self-contained piece of content, like a blog post or news story.</p>
+                <aside>
+                    <p>This <code>&lt;aside&gt;</code> holds related but separate content, like a sidebar note.</p>
+                </aside>
+            </article>
+
+            <div>
+                <p>This is a generic <code>&lt;div&gt;</code> container, often used for grouping content. A <code>&lt;span&gt;</code> is the inline equivalent, for example: <span>this text is wrapped in a span</span>.</p>
+            </div>
+        </section>
+
+        <hr>
+
+        <section id="quotes-code">
+            <h2>7. Quotes &amp; Code Blocks</h2>
+            <blockquote cite="https://www.example.com">
+                Use for quoting a paragraph.
+            </blockquote>
+
+            <p>Said <q>Short inline quotation</q> during the meeting.</p>
+
+            <p>The abbreviation <abbr title="HyperText Markup Language">HTML</abbr> stands for a markup language.</p>
+
+            <p>According to <cite>The HTML Living Standard</cite>, elements should be used semantically.</p>
+
+            <pre>
+function greet(name) {
+    console.log("Hello, " + name);
+}
+            </pre>
+        </section>
+
+    </main>
+
+    <footer>
+        <p>&copy; HTML Practice.</p>
+    </footer>
+
+</body>
+</html>
