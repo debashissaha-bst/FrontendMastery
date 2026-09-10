@@ -69,3 +69,16 @@ let names = ["Charlie", "Alex", "David", "Brian"];
 // Sorts alphabetically
 names.sort();
 console.log(names);
+
+
+// Nested Arrays
+
+let scores = [
+    [80, 75, 90],
+    [65, 88, 72],
+    [95, 91, 85]
+];
+
+console.log(scores[0][2]);
+console.log(scores[1][1]);
+console.log(scores[2][0]);
