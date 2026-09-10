@@ -1,32 +1,71 @@
-let fruits = ["Apple", "Banana", "Mango"];
 
-fruits.push("Orange");
-console.log(fruits);
+//push, pop, unshift, shift, includes, indexOf
 
-fruits.pop();
-console.log(fruits);
+let vegetables = ["Carrot", "Potato", "Tomato"];
 
-fruits.unshift("Grapes");
-console.log(fruits);
+vegetables.push("Onion");
 
-fruits.shift();
-console.log(fruits);
+console.log(vegetables);
 
-console.log(fruits.includes("Mango"));
-console.log(fruits.indexOf("Banana"));
+vegetables.pop();
+
+console.log(vegetables);
+
+vegetables.unshift("Cabbage");
+
+console.log(vegetables);
+
+vegetables.shift();
+
+console.log(vegetables);
+
+console.log(vegetables.includes("Potato"));
+
+console.log(vegetables.indexOf("Tomato"));
 
 
 // -----------------------------------------
 
 
-let numbers = [10, 20, 30, 40, 50];
+// Concatenation
 
-console.log(numbers.slice(1, 4));
+let firstName = "Alex";
+let lastName = "Smith";
 
-numbers.splice(2, 1);
-console.log(numbers);
+// Combines strings
+console.log(firstName + " " + lastName);
 
-console.log(numbers.join(", "));
 
+// Reverse
+
+let numbers = [10, 20, 30, 40];
+
+// Reverses an array
 numbers.reverse();
 console.log(numbers);
+
+
+// Slice in Arrays
+
+let fruits = ["Apple", "Banana", "Mango", "Orange"];
+
+// Copies part of an array
+console.log(fruits.slice(1, 3));
+
+
+// Splice in Arrays
+
+let colors = ["Red", "Blue", "Green", "Yellow"];
+
+// Removes elements
+colors.splice(1, 2);
+console.log(colors);
+
+
+// Sort in Arrays
+
+let names = ["Charlie", "Alex", "David", "Brian"];
+
+// Sorts alphabetically
+names.sort();
+console.log(names);
