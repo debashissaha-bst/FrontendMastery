@@ -1,6 +1,4 @@
-/* ============================================================
-   Aurora — readable, comfortable stylesheet
-   ============================================================ */
+/* Aurora — readable, comfortable stylesheet */
 
 :root {
   /* Softer, warmer dark background — easier on the eyes than pure black */
@@ -98,9 +96,7 @@ body::before {
     radial-gradient(800px 600px at 100% 0%, rgba(20, 184, 166, 0.06), transparent 70%);
 }
 
-/* ============================================================
-   Aurora blobs — very subtle, low opacity
-   ============================================================ */
+/* Aurora blobs — very subtle, low opacity */
 .aurora {
   position: fixed;
   inset: 0;
@@ -153,9 +149,7 @@ body::before {
   50%      { transform: translate(5vw, -6vh) scale(1.08); }
 }
 
-/* ============================================================
-   Canvases
-   ============================================================ */
+/* Canvases */
 #bg-canvas {
   position: fixed;
   inset: 0;
@@ -173,9 +167,7 @@ body::before {
   pointer-events: none;
 }
 
-/* ============================================================
-   Cursor glow — soft and unobtrusive
-   ============================================================ */
+/* Cursor glow — soft and unobtrusive */
 .cursor-glow {
   position: fixed;
   width: 340px;
@@ -193,9 +185,7 @@ body::before {
 
 body.has-pointer .cursor-glow { opacity: 1; }
 
-/* ============================================================
-   Layout
-   ============================================================ */
+/* Layout */
 .app {
   position: relative;
   z-index: 2;
@@ -207,9 +197,7 @@ body.has-pointer .cursor-glow { opacity: 1; }
   min-height: 100vh;
 }
 
-/* ============================================================
-   Topbar
-   ============================================================ */
+/* Topbar */
 .topbar {
   display: flex;
   align-items: center;
@@ -300,9 +288,7 @@ body.has-pointer .cursor-glow { opacity: 1; }
 [data-theme="light"] .icon-sun { display: none; }
 [data-theme="light"] .icon-moon { display: block; }
 
-/* ============================================================
-   Hero
-   ============================================================ */
+/* Hero */
 .hero {
   padding: 28px 2px 32px;
   animation: fadeUp 0.6s var(--ease) both 0.05s;
@@ -340,9 +326,7 @@ body.has-pointer .cursor-glow { opacity: 1; }
   line-height: 1.65;
 }
 
-/* ============================================================
-   Grid & panels
-   ============================================================ */
+/* Grid & panels */
 .grid {
   display: grid;
   grid-template-columns: 1.5fr 1fr;
@@ -379,9 +363,7 @@ body.has-pointer .cursor-glow { opacity: 1; }
   animation: fadeUp 0.6s var(--ease) both 0.15s;
 }
 
-/* ============================================================
-   Task form
-   ============================================================ */
+/* Task form */
 .task-form {
   display: flex;
   gap: 10px;
@@ -439,9 +421,7 @@ body.has-pointer .cursor-glow { opacity: 1; }
 
 .btn-add:active { transform: scale(0.97); }
 
-/* ============================================================
-   Filters
-   ============================================================ */
+/* Filters */
 .filters {
   display: flex;
   gap: 4px;
@@ -479,9 +459,7 @@ body.has-pointer .cursor-glow { opacity: 1; }
   box-shadow: 0 1px 3px rgba(30, 25, 70, 0.1);
 }
 
-/* ============================================================
-   Task list
-   ============================================================ */
+/* Task list */
 .task-list {
   list-style: none;
   display: flex;
@@ -620,9 +598,7 @@ body.has-pointer .cursor-glow { opacity: 1; }
   transform: scale(1.06);
 }
 
-/* ============================================================
-   Empty state
-   ============================================================ */
+/* Empty state */
 .empty {
   display: none;
   flex-direction: column;
@@ -649,9 +625,7 @@ body.has-pointer .cursor-glow { opacity: 1; }
 .empty-title { font-weight: 700; font-size: 1rem; color: var(--text); }
 .empty-sub { font-size: 0.87rem; color: var(--muted); }
 
-/* ============================================================
-   Progress ring
-   ============================================================ */
+/* Progress ring */
 .ring-wrap {
   position: relative;
   width: 190px;
@@ -707,9 +681,7 @@ body.has-pointer .cursor-glow { opacity: 1; }
   color: var(--muted);
 }
 
-/* ============================================================
-   Stats
-   ============================================================ */
+/* Stats */
 .stats {
   width: 100%;
   display: grid;
@@ -755,9 +727,7 @@ body.has-pointer .cursor-glow { opacity: 1; }
   color: var(--muted);
 }
 
-/* ============================================================
-   Ghost button
-   ============================================================ */
+/* Ghost button */
 .btn-ghost {
   width: 100%;
   display: inline-flex;
@@ -786,9 +756,7 @@ body.has-pointer .cursor-glow { opacity: 1; }
 
 .btn-ghost:active { transform: scale(0.99); }
 
-/* ============================================================
-   Footer
-   ============================================================ */
+/* Footer */
 .footer {
   margin-top: auto;
   padding: 40px 2px 6px;
@@ -798,9 +766,7 @@ body.has-pointer .cursor-glow { opacity: 1; }
   animation: fadeUp 0.6s var(--ease) both 0.2s;
 }
 
-/* ============================================================
-   Toast
-   ============================================================ */
+/* Toast */
 .toast {
   position: fixed;
   left: 50%;
@@ -834,9 +800,7 @@ body.has-pointer .cursor-glow { opacity: 1; }
   transform: translate(-50%, 0);
 }
 
-/* ============================================================
-   Entrance animations
-   ============================================================ */
+/* Entrance animations */
 @keyframes fadeUp {
   from { opacity: 0; transform: translateY(14px); }
   to   { opacity: 1; transform: translateY(0); }
@@ -847,9 +811,7 @@ body.has-pointer .cursor-glow { opacity: 1; }
   to   { opacity: 1; transform: translateY(0); }
 }
 
-/* ============================================================
-   Responsive
-   ============================================================ */
+/* Responsive */
 @media (max-width: 860px) {
   .grid { grid-template-columns: 1fr; }
   .side-panel { order: -1; }
@@ -866,9 +828,7 @@ body.has-pointer .cursor-glow { opacity: 1; }
   .logo-text { display: none; }
 }
 
-/* ============================================================
-   Accessibility preferences
-   ============================================================ */
+/* Accessibility preferences */
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after {
     animation-duration: 0.001ms !important;

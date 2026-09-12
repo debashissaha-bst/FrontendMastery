@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Beatbox — Step Sequencer</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="app">
+
+  <header class="topbar">
+    <div class="logo">
+      <span class="logo-mark" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round">
+          <circle cx="12" cy="12" r="9"/>
+          <circle cx="12" cy="12" r="3" fill="currentColor" stroke="none"/>
+        </svg>
+      </span>
+      <div class="logo-text">
+        <strong>Beatbox</strong>
+        <small>step sequencer</small>
+      </div>
+    </div>
+
+    <button class="icon-btn" id="themeToggle" aria-label="Toggle color theme">
+      <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+        <circle cx="12" cy="12" r="4"/>
+        <path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/>
+      </svg>
+      <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+      </svg>
+    </button>
+  </header>
+
+  <section class="hero">
+    <p class="eyebrow">✦ No samples · Pure math</p>
+    <h1>Make a <span class="grad">beat</span>.</h1>
+    <p class="hero-sub">Click cells to build a pattern. Press play. Everything synthesizes live in your browser.</p>
+  </section>
+
+  <section class="transport">
+    <button class="btn-play" id="playBtn" aria-label="Play pattern">
+      <svg class="icon-play" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+      <svg class="icon-stop" viewBox="0 0 24 24" fill="currentColor" style="display:none"><rect x="6" y="6" width="12" height="12" rx="1.5"/></svg>
+      <span id="playLabel">Play</span>
+    </button>
+
+    <div class="control">
+      <div class="control-head">
+        <label for="bpmRange">Tempo</label>
+        <span class="value" id="bpmValue">110 <small>BPM</small></span>
+      </div>
+      <input type="range" id="bpmRange" min="60" max="180" value="110" step="1" aria-label="Tempo in beats per minute">
+    </div>
+
+    <div class="control">
+      <div class="control-head">
+        <label for="volRange">Volume</label>
+        <span class="value" id="volValue">75 <small>%</small></span>
+      </div>
+      <input type="range" id="volRange" min="0" max="100" value="75" step="1" aria-label="Master volume">
+    </div>
+
+    <button class="btn-ghost" id="clearBtn" aria-label="Clear pattern">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+        <path d="M3 6h18M8 6V4h8v2M19 6l-1 14H6L5 6"/>
+      </svg>
+      Clear
+    </button>
+  </section>
+
+  <section class="sequencer" aria-label="Step sequencer">
+    <div class="grid-head" aria-hidden="true">
+      <div></div>
+      <div class="beats" id="beats"></div>
+    </div>
+    <div id="rows"></div>
+  </section>
+
+  <section class="presets">
+    <div class="presets-head">
+      <h2>Presets</h2>
+      <p>Load a starting point, then tweak it.</p>
+    </div>
+    <div class="preset-list">
+      <button class="preset" data-preset="basic">Basic</button>
+      <button class="preset" data-preset="techno">Techno</button>
+      <button class="preset" data-preset="lofi">Lo-Fi</button>
+      <button class="preset" data-preset="house">House</button>
+      <button class="preset" data-preset="trap">Trap</button>
+      <button class="preset" data-preset="empty">Empty</button>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <span>Tip: press <kbd>Space</kbd> to play or stop.</span>
+  </footer>
+
+</div>
+
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<script src="script.js"></script>
+</body>
+</html>

@@ -1,6 +1,4 @@
-/* ============================================================
-   Aurora — script.js
-   ============================================================ */
+/* Aurora — script.js */
 
 const $  = (sel, root = document) => root.querySelector(sel);
 const $$ = (sel, root = document) => Array.from(root.querySelectorAll(sel));
@@ -8,9 +6,7 @@ const $$ = (sel, root = document) => Array.from(root.querySelectorAll(sel));
 const root = document.documentElement;
 const dpr  = Math.min(window.devicePixelRatio || 1, 2);
 
-/* ============================================================
-   1. THEME
-   ============================================================ */
+/* 1. THEME */
 const themeToggle = $('#themeToggle');
 const savedTheme  = localStorage.getItem('aurora.theme') || 'dark';
 root.setAttribute('data-theme', savedTheme);
@@ -22,18 +18,14 @@ themeToggle.addEventListener('click', () => {
   updateParticleColors();
 });
 
-/* ============================================================
-   2. DATE CHIP
-   ============================================================ */
+/* 2. DATE CHIP */
 $('#dateChip').textContent = new Date().toLocaleDateString(undefined, {
   weekday: 'short',
   month: 'short',
   day: 'numeric'
 });
 
-/* ============================================================
-   3. TOAST
-   ============================================================ */
+/* 3. TOAST */
 const toastEl = $('#toast');
 let toastTimer = null;
 
@@ -44,9 +36,7 @@ function toast(message) {
   toastTimer = setTimeout(() => toastEl.classList.remove('show'), 2200);
 }
 
-/* ============================================================
-   4. PARTICLE CONSTELLATION BACKGROUND
-   ============================================================ */
+/* 4. PARTICLE CONSTELLATION BACKGROUND */
 const bgCanvas = $('#bg-canvas');
 const bgCtx    = bgCanvas.getContext('2d');
 
@@ -149,9 +139,7 @@ updateParticleColors();
 sizeBackground();
 drawBackground();
 
-/* ============================================================
-   5. CURSOR GLOW
-   ============================================================ */
+/* 5. CURSOR GLOW */
 const cursorGlow = $('#cursorGlow');
 let glowX = innerWidth / 2, glowY = innerHeight / 2;
 let targetX = glowX, targetY = glowY;
@@ -177,9 +165,7 @@ window.addEventListener('pointerleave', () => {
   requestAnimationFrame(animateGlow);
 })();
 
-/* ============================================================
-   6. CONFETTI
-   ============================================================ */
+/* 6. CONFETTI */
 const confettiCanvas = $('#confetti');
 const cctx = confettiCanvas.getContext('2d');
 let confettiParts = [];
@@ -255,9 +241,7 @@ function confettiLoop() {
 
 sizeConfetti();
 
-/* ============================================================
-   7. TASK STATE
-   ============================================================ */
+/* 7. TASK STATE */
 const STORAGE_KEY = 'aurora.tasks';
 
 let tasks = [];
@@ -292,9 +276,7 @@ function save() {
   localStorage.setItem(STORAGE_KEY, JSON.stringify(tasks));
 }
 
-/* ============================================================
-   8. RENDER
-   ============================================================ */
+/* 8. RENDER */
 function render() {
   const visible = tasks.filter((t) => {
     if (currentFilter === 'active') return !t.done;
@@ -341,9 +323,7 @@ function render() {
   updateStats();
 }
 
-/* ============================================================
-   9. STATS + RING
-   ============================================================ */
+/* 9. STATS + RING */
 function bump(el) {
   el.classList.remove('bump');
   void el.offsetWidth; // reflow to restart animation
@@ -381,9 +361,7 @@ function updateStats() {
   lastPct = pct;
 }
 
-/* ============================================================
-   10. EVENTS
-   ============================================================ */
+/* 10. EVENTS */
 
 // Add task
 taskForm.addEventListener('submit', (e) => {
@@ -463,7 +441,5 @@ document.addEventListener('keydown', (e) => {
   }
 });
 
-/* ============================================================
-   11. BOOT
-   ============================================================ */
+/* 11. BOOT */
 render();
